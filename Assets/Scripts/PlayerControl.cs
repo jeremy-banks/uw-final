@@ -16,6 +16,9 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
+        //idk what any of this does thx google
+        //https://discussions.unity.com/t/make-a-player-model-rotate-towards-mouse-location/125354
+
         //Transforms position from world space into viewport space.
         Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
 
@@ -25,9 +28,16 @@ public class PlayerControl : MonoBehaviour
         //Get the angle between the points
         float angle = AngleBetweenTwoPoints(positionOnScreen, mouseOnScreen);
 
-        //idk what any of this does thx google
-        //https://discussions.unity.com/t/make-a-player-model-rotate-towards-mouse-location/125354
-        transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
+        // Calculate the current angle
+        float currentAngle = transform.rotation.eulerAngles.z;
+
+        // Calculate the angle difference and clamp it
+        float angleDifference = Mathf.DeltaAngle(currentAngle, angle);
+        float maxRotationStep = 360f * Time.deltaTime;
+        float clampedAngleDifference = Mathf.Clamp(angleDifference, -maxRotationStep, maxRotationStep);
+
+        // Apply the clamped rotation
+        transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, currentAngle + clampedAngleDifference));
 
         //get input for movement
         hor = Input.GetAxisRaw("Horizontal");
