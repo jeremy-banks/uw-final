@@ -5,12 +5,12 @@
 - gamestart scene
 - gameover scene
 - scene 1
-  - wasd movement
-  - sword slash in front
-  - always face mouse
+  - wasd movement                       DONE
+  - sword slash in front                DONE
+  - always face mouse                   DONE
 - scene 2
-  - camera locks on scene
-  - scene switch when player leaves
+  - camera locks on scene               DONE
+  - scene switch when player leaves     DONE
   - singleton
     - enemy death status
     - player health
