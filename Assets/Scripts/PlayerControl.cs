@@ -16,6 +16,26 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
+        FaceCursor();
+
+        //get input for movement
+        hor = Input.GetAxisRaw("Horizontal");
+        vert = Input.GetAxisRaw("Vertical");
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SlashSword();
+        }
+    }
+
+    void FixedUpdate()
+    {
+        //apply movement
+        rb.velocity = new Vector3(hor * playerSpeed, vert * playerSpeed, 0);
+    }
+
+    void FaceCursor()
+    {
         //idk what any of this does thx google
         //https://discussions.unity.com/t/make-a-player-model-rotate-towards-mouse-location/125354
 
@@ -38,20 +58,31 @@ public class PlayerControl : MonoBehaviour
 
         // Apply the clamped rotation
         transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, currentAngle + clampedAngleDifference));
-
-        //get input for movement
-        hor = Input.GetAxisRaw("Horizontal");
-        vert = Input.GetAxisRaw("Vertical");
-    }
-
-    void FixedUpdate()
-    {
-        //apply movement
-        rb.velocity = new Vector3(hor * playerSpeed, vert * playerSpeed, 0);
     }
 
     float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
     {
         return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
+    }
+
+    void SlashSword()
+    {
+        // Create a new GameObject
+        GameObject sword = GameObject.CreatePrimitive(PrimitiveType.Cube);
+
+        // Set the name of the object
+        sword.name = "Sword";
+
+        // Set the size of the sword
+        sword.transform.localScale = new Vector3(0.1f, 1.5f, 0.3f);
+
+        // Add a collider to the sword (BoxCollider is already added by GameObject.CreatePrimitive)
+        BoxCollider boxCollider = sword.GetComponent<BoxCollider>();
+
+        // Optionally adjust collider if needed
+        // boxCollider.size = swordSize;
+
+        // Optionally, adjust the position of the sword relative to the player
+        sword.transform.position = transform.position + transform.forward;  // Position in front of the player
     }
 }
