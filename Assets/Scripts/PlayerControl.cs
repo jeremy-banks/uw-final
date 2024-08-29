@@ -2,12 +2,28 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
+    public static PlayerControl Instance { get; private set; }
     Rigidbody rb;
     [SerializeField] float playerSpeed = 10f;
     float hor;
     float vert;
     float slashCooldown = 1.5f;
     float lastSlashTime = -Mathf.Infinity;
+
+    void Awake()
+    {
+        // If there is an instance, and it's not me, delete myself.
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(Instance);
+        }
+    }
 
     void Start()
     {
