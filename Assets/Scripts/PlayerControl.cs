@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    // https://discussions.unity.com/t/make-a-player-model-rotate-towards-mouse-location/125354
-
     Rigidbody rb;
     [SerializeField] float playerSpeed = 10f;
     float hor;
@@ -18,20 +16,18 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
-        FaceCursor();
-
-        //get input for movement
+        // Get input for movement
         hor = Input.GetAxisRaw("Horizontal");
         vert = Input.GetAxisRaw("Vertical");
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             {
-                // Check if enough time has passed since the last sword
+                // Check if cooldown is up
                 if (Time.time - lastSlashTime >= slashCooldown)
                 {
                     SlashSword();
-                    lastSlashTime = Time.time;  // Update the time of the last sword creation
+                    lastSlashTime = Time.time;  // Reset cooldown
                 }
             }
         }
@@ -39,50 +35,55 @@ public class PlayerControl : MonoBehaviour
 
     void FixedUpdate()
     {
-        //apply movement
-        rb.velocity = new Vector3(hor * playerSpeed, vert * playerSpeed, 0);
+        // Apply movement
+        rb.velocity = new Vector3(hor * playerSpeed, 0, vert * playerSpeed);
+
+        // Apply facing
+        FaceCursor();
     }
 
     void FaceCursor()
     {
-        //idk what any of this does thx google
-        //https://discussions.unity.com/t/make-a-player-model-rotate-towards-mouse-location/125354
+        /* Lot of complex stuff here I don't fully understand
+        * https://discussions.unity.com/t/make-a-player-model-rotate-towards-mouse-location/125354
+        */
 
-        //transform position from world space into viewport space
-        Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
+        // Convert the object's position to screen space
+        Vector3 objectScreenPosition = Camera.main.WorldToScreenPoint(transform.position);
 
-        //transform position from screen space into viewport space
-        Vector2 mouseOnScreen = (Vector2)Camera.main.ScreenToViewportPoint(Input.mousePosition);
+        // Get the cursor position in screen space
+        Vector3 cursorScreenPosition = Input.mousePosition;
 
-        //get angle between the points
-        float angle = AngleBetweenTwoPoints(positionOnScreen, mouseOnScreen);
+        // Calculate the direction vector from the object to the cursor
+        Vector3 direction = cursorScreenPosition - objectScreenPosition;
 
-        //calculate the current angle
-        float currentAngle = transform.rotation.eulerAngles.z;
+        // Invert the y-axis direction to fix top/bottom inversion issue
+        direction.y = -direction.y;
 
-        //calculate the angle difference and clamp it
+        // Calculate the angle to rotate the object towards the cursor
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        // Calculate the current angle
+        float currentAngle = transform.rotation.eulerAngles.y;
+
+        // Calculate the angle difference and clamp it
         float angleDifference = Mathf.DeltaAngle(currentAngle, angle);
         float maxRotationStep = 360f * Time.deltaTime;
         float clampedAngleDifference = Mathf.Clamp(angleDifference, -maxRotationStep, maxRotationStep);
 
-        //apply the clamped rotation
-        transform.rotation = Quaternion.Euler(new Vector3(90f, 0f, currentAngle + clampedAngleDifference));
-    }
-
-    float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
-    {
-        return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
+        // Apply the clamped rotation
+        transform.rotation = Quaternion.Euler(new Vector3(0f, currentAngle + clampedAngleDifference, 0f));
     }
 
     void SlashSword()
     {
-        //create cube
+        // Create cube
         GameObject sword = GameObject.CreatePrimitive(PrimitiveType.Cube);
 
-        //size the cube like a sword
+        // Size the cube like a sword
         sword.transform.localScale = new Vector3(0.1f, 1.5f, 0.3f);
 
-        //position the sword in front of the player
+        // Position the sword in front of the player
         sword.transform.position = transform.position + transform.forward;
     }
 }
