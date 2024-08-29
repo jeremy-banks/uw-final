@@ -86,7 +86,13 @@ public class PlayerControl : MonoBehaviour
         // Child the cube to the player
         sword.transform.SetParent(transform);
 
-        // Position the sword in front of the player
-        sword.transform.position = new Vector3((transform.position.x + 1.5f), transform.position.y, transform.position.z);
+        // Position the sword in front of the player using the player's forward direction to position the sword
+        sword.transform.localPosition = new Vector3 (1.5f, 0f, 0f);
+
+        // Rotate the sword to be facing the correct way
+        sword.transform.rotation = Quaternion.LookRotation(transform.forward);
+
+        // Destroy the sword after a third of a second
+        Destroy(sword, 0.33f);
     }
 }
