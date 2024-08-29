@@ -7,7 +7,7 @@ public class PlayerControl : MonoBehaviour
     float hor;
     float vert;
     float slashCooldown = 1.5f;
-    float lastSlashTime = 0f;
+    float lastSlashTime = -Mathf.Infinity;
 
     void Start()
     {
@@ -27,7 +27,7 @@ public class PlayerControl : MonoBehaviour
                 if (Time.time - lastSlashTime >= slashCooldown)
                 {
                     SlashSword();
-                    lastSlashTime = Time.time;  // Reset cooldown
+                    lastSlashTime = Time.time; // Reset cooldown
                 }
             }
         }
