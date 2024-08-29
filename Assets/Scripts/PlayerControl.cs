@@ -81,9 +81,12 @@ public class PlayerControl : MonoBehaviour
         GameObject sword = GameObject.CreatePrimitive(PrimitiveType.Cube);
 
         // Size the cube like a sword
-        sword.transform.localScale = new Vector3(0.1f, 1.5f, 0.3f);
+        sword.transform.localScale = new Vector3(1.5f, .1f, 0.1f);
+
+        // Child the cube to the player
+        sword.transform.SetParent(transform);
 
         // Position the sword in front of the player
-        sword.transform.position = transform.position + transform.forward;
+        sword.transform.position = new Vector3((transform.position.x + 1.5f), transform.position.y, transform.position.z);
     }
 }
