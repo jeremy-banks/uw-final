@@ -8,6 +8,8 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] float playerSpeed = 10f;
     float hor;
     float vert;
+    float slashCooldown = 1.5f;  // Cooldown time in seconds
+    float lastSlashTime = 0f;
 
     void Start()
     {
@@ -24,7 +26,14 @@ public class PlayerControl : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SlashSword();
+            {
+                // Check if enough time has passed since the last sword
+                if (Time.time - lastSlashTime >= slashCooldown)
+                {
+                    SlashSword();
+                    lastSlashTime = Time.time;  // Update the time of the last sword creation
+                }
+            }
         }
     }
 
