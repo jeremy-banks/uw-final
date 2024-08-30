@@ -93,22 +93,19 @@ public class PlayerControl : MonoBehaviour
 
     void SlashSword()
     {
-        // Create cube
-        GameObject sword = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        // get prefab
+        GameObject sword = Instantiate(swordPrefab);
 
-        // Size the cube like a sword
-        sword.transform.localScale = new Vector3(1.5f, .1f, 0.1f);
-
-        // Child the cube to the player
+        // Child the prefab to the player
         sword.transform.SetParent(transform);
 
-        // Position the sword in front of the player using the player's forward direction to position the sword
+        // Position the prefab in front of the player using the player's forward direction to position the sword
         sword.transform.localPosition = new Vector3 (1.5f, 0f, 0f);
 
-        // Rotate the sword to be facing the correct way
+        // Rotate the prefab to be facing the correct way
         sword.transform.rotation = Quaternion.LookRotation(transform.forward);
 
-        // Destroy the sword after a third of a second
+        // Destroy the prefab after a third of a second
         Destroy(sword, 0.33f);
     }
 }
