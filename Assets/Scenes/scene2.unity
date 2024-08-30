@@ -534,6 +534,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5317503897691864558, guid: ec129c1a3580a94458a7ccf8b7012ed3, type: 3}
+      propertyPath: healthStarting
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7084923226814416638, guid: ec129c1a3580a94458a7ccf8b7012ed3, type: 3}
       propertyPath: m_Name
       value: SwordEnemy

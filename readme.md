@@ -12,20 +12,21 @@
   - camera locks on scene               DONE
   - scene switch when player leaves     DONE
   - singleton
-    - enemy death status
+    - enemy death status                DONE
     - player health
     - gameover when health reaches 0
-    - player powerups
+    - player powerups? idk what this is
   - basic sword enemy
     - damage enemy                      DONE
       - bounce away when damaged
     - death                             DONE
-    - enemy idle pathfinding
-    - enemy agro pathfinding
+    - enemy agro pathfinding            DONE
     - enemy attack
 - scene 3
   - sword enemy
   - archer
+    - enemy idle pathfinding
+    - shoot projectile at player
   - health powerup
 - scene 4
   - archer enemy
