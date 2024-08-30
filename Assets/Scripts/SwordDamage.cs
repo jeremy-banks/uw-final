@@ -2,22 +2,22 @@ using UnityEngine;
 
 public class SwordDamage : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collision detected with: " + collision.gameObject.name);
+        Debug.Log("Trigger detected with: " + other.gameObject.name);
 
-        // Check if the collided object has a method named "Damage"
-        IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();
+        // Check if the object that entered the trigger has a method named "Damage"
+        IDamageable damageable = other.gameObject.GetComponent<IDamageable>();
 
         if (damageable != null)
         {
-            Debug.Log("Damageable object found: " + collision.gameObject.name);
+            Debug.Log("Damageable object found: " + other.gameObject.name);
             // Call the Damage method on the damageable object
             damageable.Damage();
         }
         else
         {
-            Debug.Log("No IDamageable component found on: " + collision.gameObject.name);
+            Debug.Log("No IDamageable component found on: " + other.gameObject.name);
         }
     }
 }
