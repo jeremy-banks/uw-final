@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class EnemyHealth : MonoBehaviour, IDamageable
 {
     public int EnemyID;
     int healthCurrent;
@@ -32,13 +32,15 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
+        Debug.Log("argh!!!");
         EnemyState.Instance.MarkEnemyDead(EnemyID);
         gameObject.SetActive(false);
         return;
     }
 
-    public void DealDamage()
+    public void Damage()
     {
+        Debug.Log("ouch!");
         healthCurrent -= 1;
     }
 }

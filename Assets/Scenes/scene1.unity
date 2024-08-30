@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 10
-  swordPrefab: {fileID: 0}
+  swordPrefab: {fileID: 4427632247799560450, guid: 87cc309cb4d82ef498fa915c4e85d9af, type: 3}
 --- !u!114 &210920389
 MonoBehaviour:
   m_ObjectHideFlags: 0

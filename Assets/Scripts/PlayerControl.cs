@@ -9,6 +9,7 @@ public class PlayerControl : MonoBehaviour
     float vert;
     float slashCooldown = 1.5f;
     float lastSlashTime = -Mathf.Infinity;
+    [SerializeField] GameObject swordPrefab;
 
     void Awake()
     {
