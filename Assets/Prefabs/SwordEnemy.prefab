@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8142517514644128449}
   - component: {fileID: 2639558396337005555}
   - component: {fileID: 5317503897691864558}
+  - component: {fileID: -8876052731865933372}
   m_Layer: 0
   m_Name: SwordEnemy
   m_TagString: Untagged
@@ -121,3 +122,18 @@ MonoBehaviour:
   EnemyID: 0
   healthCurrent: 0
   healthStarting: 1
+--- !u!114 &-8876052731865933372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7084923226814416638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8985f1f56b7d2cb458747c68638ac456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  moveSpeed: 3
+  rotationSpeed: 5

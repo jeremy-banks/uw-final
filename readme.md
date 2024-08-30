@@ -17,6 +17,12 @@
     - gameover when health reaches 0
     - player powerups
   - basic sword enemy
+    - damage enemy                      DONE
+      - bounce away when damaged
+    - death                             DONE
+    - enemy idle pathfinding
+    - enemy agro pathfinding
+    - enemy attack
 - scene 3
   - sword enemy
   - archer
