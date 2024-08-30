@@ -32,7 +32,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     void Die()
     {
-        Debug.Log("argh!!!");
+        //Debug.Log("argh!!!");
         EnemyState.Instance.MarkEnemyDead(EnemyID);
         gameObject.SetActive(false);
         return;
@@ -40,7 +40,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     public void Damage()
     {
-        Debug.Log("ouch!");
+        //Debug.Log("ouch!");
         healthCurrent -= 1;
     }
 }
