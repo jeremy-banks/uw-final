@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour, IDamageable
 {
     public int EnemyID;
-    int healthCurrent;
+    [SerializeField] int healthCurrent;
     public int healthStarting;
 
     // Start is called before the first frame update
