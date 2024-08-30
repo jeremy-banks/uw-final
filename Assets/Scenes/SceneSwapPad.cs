@@ -5,7 +5,7 @@ public class SceneSwapPad : MonoBehaviour
 {
     public int SceneToSwapTo;
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         // Check if the object colliding with the pad is tagged as "Player"
         if (other.CompareTag("Player"))
