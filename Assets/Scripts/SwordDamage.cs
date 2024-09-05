@@ -42,7 +42,7 @@ public class SwordDamage : MonoBehaviour
 
     IEnumerator StopVelocityCoroutine()
     {
-        // Wait for the specified delay
+        // Wait a tenth of a second
         yield return new WaitForSeconds(0.1f);
 
         // Stop the object's velocity

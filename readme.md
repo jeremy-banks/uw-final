@@ -14,7 +14,7 @@
   - singleton
     - enemy death status                DONE
     - player health                     DONE
-    - gameover when health reaches 0
+    - gameover when health reaches 0    DONE
     - player powerups
       - idk what this is?
       - probably quad damage and health up
