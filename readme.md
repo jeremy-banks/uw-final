@@ -25,14 +25,14 @@
     - enemy agro pathfinding            DONE
     - enemy attack                      DONE
 - scene 3
-  - sword enemy
+  - sword enemy                         DONE
   - archer
     - enemy idle pathfinding
     - shoot projectile at player
   - health powerup
 - scene 4
   - archer enemy
-  - sword enemy
+  - sword enemy                         DONE
   - fireguy enemy
   - quad damage powerup
 - scene 5
@@ -42,3 +42,9 @@
 
 - ...
 - Submit results to itch.io
+
+##
+- lot of bugs on end of game (look at scene view)
+- enemies can damage and kill each other!
+    bc i am using idamageable and using the same "call" (or whatever the term is) to the Damage method
+    leaving it in
