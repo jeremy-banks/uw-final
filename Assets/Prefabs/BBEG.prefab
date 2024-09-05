@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 4355812612600261750}
   - component: {fileID: 7590843525482257085}
   - component: {fileID: 4758988662187082002}
+  - component: {fileID: 3185873264555908544}
+  - component: {fileID: -1482695587538176958}
   m_Layer: 0
   m_Name: BBEG
   m_TagString: Untagged
@@ -107,3 +109,30 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3185873264555908544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2482657975743678409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bac3c10a7b28b8c4083b22be9b3df6b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyID: 0
+  healthCurrent: 0
+  healthStarting: 5
+--- !u!114 &-1482695587538176958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2482657975743678409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be8aec7170191734a97301fd77eb2396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

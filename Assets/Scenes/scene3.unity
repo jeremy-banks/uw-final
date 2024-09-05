@@ -536,6 +536,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5317503897691864558, guid: ec129c1a3580a94458a7ccf8b7012ed3, type: 3}
+      propertyPath: EnemyID
+      value: 31
+      objectReference: {fileID: 0}
     - target: {fileID: 7084923226814416638, guid: ec129c1a3580a94458a7ccf8b7012ed3, type: 3}
       propertyPath: m_Name
       value: SwordEnemy
@@ -553,6 +557,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5939101506908065466, guid: 3d6118d17f6e32b439a8e3df3dce64e6, type: 3}
+      propertyPath: EnemyID
+      value: 32
+      objectReference: {fileID: 0}
     - target: {fileID: 6300310097516150020, guid: 3d6118d17f6e32b439a8e3df3dce64e6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3

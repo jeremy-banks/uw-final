@@ -439,6 +439,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BBEG
       objectReference: {fileID: 0}
+    - target: {fileID: 3185873264555908544, guid: 0bfef4648a269444d9706a87b6b7242f, type: 3}
+      propertyPath: EnemyID
+      value: 51
+      objectReference: {fileID: 0}
     - target: {fileID: 5198107816713775560, guid: 0bfef4648a269444d9706a87b6b7242f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3
