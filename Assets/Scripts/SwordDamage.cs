@@ -23,7 +23,7 @@ public class SwordDamage : MonoBehaviour
             rb = collision.rigidbody;
             if (rb != null)
             {
-                Debug.Log("rb is not null");
+                //Debug.Log("rb is not null");
                 // Calculate direction to push the object away from the player
                 Vector3 pushDirection = (collision.transform.position - transform.position).normalized;
 
@@ -34,10 +34,10 @@ public class SwordDamage : MonoBehaviour
                 StartCoroutine(StopVelocityCoroutine());
             }
         }
-        else
-        {
-            Debug.Log("No IDamageable component found on: " + collision.gameObject.name);
-        }
+        //else
+        //{
+        //    Debug.Log("No IDamageable component found on: " + collision.gameObject.name);
+        //}
     }
 
     IEnumerator StopVelocityCoroutine()

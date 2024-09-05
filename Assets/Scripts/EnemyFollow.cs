@@ -14,10 +14,10 @@ public class EnemyFollow : MonoBehaviour
         {
             player = playerObject.transform;
         }
-        else
-        {
-            Debug.LogWarning("Player object with tag 'Player' not found.");
-        }
+        //else
+        //{
+        //    Debug.LogWarning("Player object with tag 'Player' not found.");
+        //}
     }
 
     void FixedUpdate()
