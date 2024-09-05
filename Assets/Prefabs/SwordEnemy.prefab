@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3414253805065273310}
   - component: {fileID: 5317503897691864558}
   - component: {fileID: -8876052731865933372}
+  - component: {fileID: 2670963057676653597}
   m_Layer: 0
   m_Name: SwordEnemy
   m_TagString: Untagged
@@ -165,3 +166,15 @@ MonoBehaviour:
   player: {fileID: 0}
   moveSpeed: 3
   rotationSpeed: 5
+--- !u!114 &2670963057676653597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7084923226814416638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be8aec7170191734a97301fd77eb2396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

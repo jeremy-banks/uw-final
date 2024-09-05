@@ -20,7 +20,7 @@
       - probably quad damage and health up
   - basic sword enemy
     - damage enemy                      DONE
-      - bounce away when damaged
+      - bounce away when damaged        DONE
     - death                             DONE
     - enemy agro pathfinding            DONE
     - enemy attack
