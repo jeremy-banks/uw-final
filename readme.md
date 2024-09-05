@@ -15,7 +15,9 @@
     - enemy death status                DONE
     - player health
     - gameover when health reaches 0
-    - player powerups? idk what this is
+    - player powerups
+      - idk what this is?
+      - probably quad damage and health up
   - basic sword enemy
     - damage enemy                      DONE
       - bounce away when damaged

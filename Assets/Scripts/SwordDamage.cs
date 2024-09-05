@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class SwordDamage : MonoBehaviour
 {
@@ -26,20 +27,24 @@ public class SwordDamage : MonoBehaviour
                 Vector3 pushDirection = (other.transform.position - transform.position).normalized;
 
                 // Apply that force
-                rb.AddForce(pushDirection * 2f, ForceMode.Impulse);
+                rb.AddForce(pushDirection * 300f, ForceMode.Impulse);
 
-                // Stop velocity after 1s otherwise enemy floats until acted upon by another force
-                Invoke("StopVelocity", 0.5f);
+                // Stop the force (otherwise object just floats away
+                StartCoroutine(StopVelocityCoroutine());
             }
         }
-        //else
-        //{
-        //    Debug.Log("No IDamageable component found on: " + other.gameObject.name);
-        //}
+        else
+        {
+            Debug.Log("No IDamageable component found on: " + other.gameObject.name);
+        }
     }
 
-    void StopVelocity()
+    IEnumerator StopVelocityCoroutine()
     {
+        // Wait for the specified delay
+        yield return new WaitForSeconds(0.1f);
+
+        // Stop the object's velocity
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
     }
