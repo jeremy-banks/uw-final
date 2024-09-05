@@ -13,7 +13,7 @@
   - scene switch when player leaves     DONE
   - singleton
     - enemy death status                DONE
-    - player health
+    - player health                     DONE
     - gameover when health reaches 0
     - player powerups
       - idk what this is?
@@ -23,7 +23,7 @@
       - bounce away when damaged        DONE
     - death                             DONE
     - enemy agro pathfinding            DONE
-    - enemy attack
+    - enemy attack                      DONE
 - scene 3
   - sword enemy
   - archer

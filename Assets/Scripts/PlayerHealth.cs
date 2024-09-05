@@ -19,9 +19,26 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         if (healthCurrent < 1) Die();
     }
 
+    void HidePlayerMeshRenderer(GameObject obj)
+    {
+        MeshRenderer meshRenderer = obj.GetComponent<MeshRenderer>();
+        if (meshRenderer != null)
+        {
+            meshRenderer.enabled = false;
+        }
+    }
+
     void Die()
     {
         Debug.Log("argh!!!");
+
+        // Disable mesh renderer of player so they are not visible
+        foreach (Transform child in transform)
+        {
+            HidePlayerMeshRenderer(child.gameObject);
+        }
+        HidePlayerMeshRenderer(gameObject);
+
         // Load gameover scene
         SceneManager.LoadScene(1);
     }
