@@ -27,13 +27,14 @@
 - scene 3
   - sword enemy                         DONE
   - archer
-    - enemy idle pathfinding
     - shoot projectile at player
   - health powerup
 - scene 4
   - archer enemy
   - sword enemy                         DONE
   - fireguy enemy
+    - runs away from player
+    - drops fire on ground to dmg
   - quad damage powerup
 - scene 5
   - boss
