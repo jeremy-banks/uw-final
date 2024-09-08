@@ -33,4 +33,9 @@ public class EnemyState : MonoBehaviour
     {
         enemyStates[enemyID] = true;
     }
+
+    public void ResetEnemyStates()
+    {
+        enemyStates.Clear();
+    }
 }

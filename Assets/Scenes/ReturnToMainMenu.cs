@@ -14,10 +14,10 @@ public class ReturnToMainMenu : MonoBehaviour
 
     private void OnButtonClick()
     {
+        // Reset enemy state data
+        EnemyState.Instance.ResetEnemyStates();
+
         // Switch to menu scene
         SceneManager.LoadScene(0);
-
-        // Need to add logic here to reset singleton data
-        // otherwise you'd need to restart app for enemies to come alive
     }
 }
