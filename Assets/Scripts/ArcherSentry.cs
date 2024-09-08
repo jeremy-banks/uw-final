@@ -48,11 +48,14 @@ public class ArcherSentry : MonoBehaviour
             // Get the direction from the archer to the player
             Vector3 direction = (playerTransform.position - transform.position).normalized;
 
-            // Calculate the spawn position for the projectile to be between the archer and the player
+            // Calculate the spawn position for the projectile
             Vector3 spawnPosition = transform.position + direction * 2.5f;
 
-            // Instantiate the projectile at the calculated spawn position
-            GameObject shotArrow = Instantiate(projectileGO, spawnPosition, Quaternion.identity);
+            // Calculate the rotation needed to face the direction
+            Quaternion rotation = Quaternion.LookRotation(direction);
+
+            // Instantiate the projectile at the calculated spawn position and with the correct rotation
+            GameObject shotArrow = Instantiate(projectileGO, spawnPosition, rotation);
 
             // Apply force to the projectile's Rigidbody
             Rigidbody rb = shotArrow.GetComponent<Rigidbody>();
