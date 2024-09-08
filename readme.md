@@ -21,8 +21,8 @@ Red capsule at the end is Big Bad Evil Guy
 
 ## ToDo
 - Follow Design Document
-- gamestart scene
-- gameover scene
+- gamestart scene                       DONE
+- gameover scene                        DONE
 - scene 1
   - wasd movement                       DONE
   - sword slash in front                DONE
@@ -34,9 +34,6 @@ Red capsule at the end is Big Bad Evil Guy
     - enemy death status                DONE
     - player health                     DONE
     - gameover when health reaches 0    DONE
-    - player powerups
-      - idk what this is?
-      - probably quad damage and health up
   - basic sword enemy
     - damage enemy                      DONE
       - bounce away when damaged        DONE
@@ -50,7 +47,7 @@ Red capsule at the end is Big Bad Evil Guy
     - shoot projectile at player        DONE
   - health powerup
 - scene 4
-  - archer enemy
+  - archer enemy                        DONE
   - sword enemy                         DONE
   - fireguy enemy
     - runs away from player             DONE
