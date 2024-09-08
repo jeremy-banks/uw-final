@@ -1,15 +1,14 @@
 # Blatant Zelda Ripoff
 
 ## Instructions
-WASD controls player movement
-Mouse cursor controls player facing
-Spacebar "stabs" in front of player with a sword
-Green boxes are platforms to next/previous levels
-
-Purple sphere is melee enemy who rushes you
-Yellow box is archer enemy who will fire arrows and run if player gets close
-Orange sphere is fireguy enemy who drops flame traps
-Red capsule at the end is Big Bad Evil Guy
+- WASD controls player movement
+- Mouse cursor controls player facing
+- Spacebar "stabs" in front of player with a sword
+- Green boxes are platforms to next/previous levels
+- Purple sphere is melee enemy who rushes you
+- Yellow box is archer enemy who will fire arrows and run if player gets close
+- Orange sphere is fireguy enemy who drops flame traps
+- Red capsule at the end is Big Bad Evil Guy
 
 ## Features
 - Players and enemies knocked back when damaged
