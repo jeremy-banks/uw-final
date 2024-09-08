@@ -18,7 +18,6 @@ Red capsule at the end is Big Bad Evil Guy
 
 ## Bugs
 - Ramming enemies cause them to float off indefinitely, and through the boundaries of the scene
-- Lot of bugs on game over scene (look at scene view)
 
 ## ToDo
 - Follow Design Document

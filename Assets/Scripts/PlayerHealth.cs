@@ -39,6 +39,9 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         }
         HidePlayerMeshRenderer(gameObject);
 
+        // Reset player's health
+        healthCurrent = healthStarting;
+
         // Load gameover scene
         SceneManager.LoadScene(1);
     }
