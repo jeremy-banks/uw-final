@@ -56,16 +56,10 @@ public class ArcherSentry : MonoBehaviour
 
             // Apply force to the projectile's Rigidbody
             Rigidbody rb = shotArrow.GetComponent<Rigidbody>();
-            if (rb != null)
-            {
-                rb.AddForce(direction * shootingForce, ForceMode.Impulse);
-            }
+            rb.AddForce(direction * shootingForce, ForceMode.Impulse);
 
-            Debug.Log($"Applied Force: {direction * shootingForce}");
-            Debug.Log($"Initial Velocity: {rb.velocity}");
-
-            // Destroy arrow after 3 seconds
-            Destroy(shotArrow, 3.0f);
+            // Destroy arrow after 5 seconds
+            Destroy(shotArrow, 5.0f);
         }
     }
 }
